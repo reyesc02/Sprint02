@@ -1,7 +1,8 @@
 package Project02;
 
 /**
- *
+ * when my tribe has a greater life points than attack damage the otherTribe(-50)
+ *but if my lifepoints is less than the otherTribe which I will have (-1) is taking.
  */
 public class AnnaWizardStrategy implements Strategy{
 
@@ -15,7 +16,7 @@ public class AnnaWizardStrategy implements Strategy{
                 lifePoints = otherPerson.getLifePoints() - 50;
             }
             else{
-                lifePoints = me.getLifePoints() - 1;
+                lifePoints = me.getLifePoints() - 1; // runaway
             }
 
             if (me.getTribe() == otherPerson.getTribe())
