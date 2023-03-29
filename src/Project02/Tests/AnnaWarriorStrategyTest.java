@@ -1,6 +1,9 @@
+package Project02.Tests;
+
 import Project02.*;
-import org.junit.jupiter.api.Test;
-import  static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AnnaWarriorStrategyTest {
 
@@ -11,11 +14,7 @@ public class AnnaWarriorStrategyTest {
         People otherWarrior = new AnnaWarrior("Idiot", "5", 60, warrior);
 
         assertEquals(58,warrior.strategy(meWarrior,otherWarrior));
-
-
    }
-
-
    @Test
     public void TestOtherWarriorStrategy(){
         AnnaWarriorStrategy warrior = new AnnaWarriorStrategy();
