@@ -28,11 +28,19 @@ public class Tribe
             if(i % 2 == 0)
                 if (Objects.equals(nationName, "Diablos"))
                     members.add(new CarlWarrior(nationName, tribeName, tribeLifePoints / 5, new CarlWarriorStrategy()));
+                else if (Objects.equals(nationName, "Source2"))
+                    members.add(new ShawnWarrior(nationName, tribeName, tribeLifePoints / 5, new ShawnWarriorStrategy()));
+                else if (Objects.equals(nationName, "Anna"))
+                    members.add(new AnnaWarrior(nationName, tribeName, tribeLifePoints / 5, new AnnaWarriorStrategy()));
                 else
                     members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5, new WarriorStrategy()));
             else
                 if (Objects.equals(nationName, "Diablos"))
                     members.add(new CarlWizard(nationName, tribeName, tribeLifePoints / 5, new CarlWizardStrategy()));
+                else if (Objects.equals(nationName, "Source2"))
+                    members.add(new ShawnWizard(nationName, tribeName, tribeLifePoints / 5, new ShawnWizardStrategy()));
+                else if (Objects.equals(nationName, "Anna"))
+                    members.add(new AnnaWizard(nationName, tribeName, tribeLifePoints / 5, new AnnaWizardStrategy()));
                 else
                     members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5, new WizardStrategy()));
         for(int i = 0; i < members.size(); i++)

@@ -1,12 +1,15 @@
 package Project02;
 
+import Project02.People;
+import Project02.PeopleType;
 
-public class CarlWizard extends People
+
+public class ShawnWizard extends People
 {
-    public CarlWizard(String nation, String tribe, int lifePoints, Strategy strategy)
+    ShawnWizard(String nation, String tribe, int lifePoints, Strategy strategy)
     {
         super(nation, tribe, PeopleType.wizard, lifePoints, strategy);
-        myDescription = "\tCarl Wizard";
+        myDescription = "\tShawn Wizard";
 
     }
 
