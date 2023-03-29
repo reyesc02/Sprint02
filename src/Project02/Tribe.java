@@ -3,6 +3,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.io.StringBufferInputStream;
 import java.util.ArrayList;
+import java.util.Objects;
+
 import Project02.People;
 import Project02.PeopleType;
 import Project02.SchaperWarrior;
@@ -24,9 +26,15 @@ public class Tribe
         tribeLifePoints = lifePoints;
         for(int i = 0; i < 5; i++)
             if(i % 2 == 0)
-                members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5, new WarriorStrategy()));
+                if (Objects.equals(nationName, "Diablos"))
+                    members.add(new CarlWarrior(nationName, tribeName, tribeLifePoints / 5, new CarlWarriorStrategy()));
+                else
+                    members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5, new WarriorStrategy()));
             else
-                members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5, new WizardStrategy()));
+                if (Objects.equals(nationName, "Diablos"))
+                    members.add(new CarlWizard(nationName, tribeName, tribeLifePoints / 5, new CarlWizardStrategy()));
+                else
+                    members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5, new WizardStrategy()));
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }
