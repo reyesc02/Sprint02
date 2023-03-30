@@ -4,6 +4,12 @@ import Project02.Nation;
 import Project02.People;
 import java.util.*;
 
+/**
+ * The World Class.
+ * This class sets up the game and holds the data for
+ * various nations such as worldLifePoints, the number of alive
+ * or dead people, and keeps track of round number.
+ */
 public class World
 {
     private final int worldLifePoints = 4000;
@@ -14,7 +20,11 @@ public class World
     private Random generator;
     private ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
-    
+    /**
+     * Constructor for World
+     * This creates a new Random generator and adds all created populations
+     * to the world.
+     */
     public World()
     {
         // seed for psuedo-random number generator
@@ -24,6 +34,11 @@ public class World
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
     }
 
+    /**
+     * The war function.
+     * This function runs each round for the world.
+     * Until 40 rounds are reached or all nations are destroyed.
+     */
     public void war()
         {
             ArrayList<Integer> worldSurvivingPeople = new ArrayList<>();
@@ -61,7 +76,10 @@ public class World
     }
 
 
-
+    /**
+     * The create world function.
+     * This functions adds all the nations to the world.
+     */
     public void createWorld()
     {
         allNations.add(new Nation("Idiots", (worldLifePoints / 2)));
@@ -72,6 +90,11 @@ public class World
     }
 
 
+    /**
+     * The getWorldCreatedPopulation function.
+     * This function adds all living people to an arrayList
+     * @return livingPeople, the ArrayList of all living people.
+     */
     public ArrayList<People> getWorldCreatedPopulation()
     {
         ArrayList<People> livingPeople = new ArrayList<>();
@@ -82,7 +105,11 @@ public class World
         return livingPeople;
     }
 
-
+    /**
+     * the getworldsurvivingpeople function.
+     * This function adds the surviving people to an ArrayList.
+     * @return survivors, The list of surviving people.
+     */
     public ArrayList<Integer> getWorldSurvivingPeople()
     {
         ArrayList<Integer> survivors = new ArrayList<>();
@@ -96,7 +123,11 @@ public class World
         return survivors;
     }
 
-
+    /**
+     * getSurvivingNations function.
+     * This function adds all surviving nations to an ArrayList
+     * @return survivingNations, the list of surviving nations.
+     */
     public Set<String> getSurvivingNations()
     {
         Set<String> survivingNations = new HashSet<>();
@@ -112,6 +143,12 @@ public class World
     }
 
 
+    /**
+     * The encounter function
+     * This function runs an encounter between 2 people using their strategy.
+     * @param person1, the 1st person of the encounter.
+     * @param person2, the 2nd person of the encounter.
+     */
     public void encounter(Integer person1, Integer person2)
     {
         Integer person1LifePointsToUse;
@@ -156,7 +193,11 @@ public class World
 
     }
 
-
+    /**
+     * The play 1 round function.
+     * This function plays 1 round by assigning each person a combatant
+     * @param combatants the list of people to pair up.
+     */
     public void playOneRound(ArrayList<Integer> combatants)
     {
         System.out.println(combatants.size());

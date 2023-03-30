@@ -19,6 +19,14 @@ public class Tribe
     private ArrayList<People> members = new ArrayList<>();
     private ArrayList<People> livingMembers = new ArrayList<>();
 
+    /**
+     * Constructor for Tribe.
+     * This function takes 3 parameters, nation, tribe, and lifepoints.
+     * Also sets the strategy for each nation based on name.
+     * @param nation The nationality of the specific tribe
+     * @param tribe The tribe name
+     * @param lifePoints The lifePoints of the specific tribe
+     */
     public Tribe(String nation, String tribe, int lifePoints)
     {
         nationName = nation;
@@ -46,7 +54,10 @@ public class Tribe
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }
-
+    /**
+     * Function for collecting all living tribe members
+     * Returns an arraylist of living entities
+     */
     public ArrayList<People> getLivingTribeMembers()
     {
         livingMembers.clear();
@@ -81,28 +92,43 @@ public class Tribe
     }
 */
 
-
+    /**
+     * Function to get Tribe size.
+     * @return the type of said person
+     */
     public int getTribeSize()
     {
         return livingMembers.size();
     }
-
+    /**
+     * Function to determine if tribe health is above 0.
+     * @return a boolean value if above 0
+     */
     public Boolean isTribeAlive()
     {
         return (tribeLifePoints > 0);
     }
 
-
+    /**
+     * Function to get tribe life points
+     * @return an int of said tribe life points
+     */
     public int getTribeLifePoints()
     {
         return tribeLifePoints;
     }
-
+    /**
+     * Function to get the tribes name
+     * @return a string of the tribe name
+     */
     public String getTribeName()
     {
         return tribeName;
     }
-
+    /**
+     * Function to display all the information members and results about encounters.
+     * @return the toString, to create formatting.
+     */
     public String toString()
     {
         String result = "\0";

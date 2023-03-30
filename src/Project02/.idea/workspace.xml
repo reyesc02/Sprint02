@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="56a8f512-4ad4-4343-8e10-e1c38979b6f8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Tests/AnnaWarriorStrategyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Tests/AnnaWizardStrategyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarlWarrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarlWarrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarlWarriorStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/CarlWarriorStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Nation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PeopleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/PeopleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/PlayGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchaperWarrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/SchaperWarrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SchaperWizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/SchaperWizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Strategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tribe.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tribe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/World.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MgrOdI6ONAt0aANj6vAvXles1e" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "/Users/reyesc02@moravian.edu/Documents/_Soft Eng/Soft Eng Homework/Sprint02/src/Project02"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Project02" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Project02" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CarlWizardStrategyTest.TestWarriorEncounter">
+    <configuration name="CarlWarriorStrategyTest.TestWarriorEncounter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Project02.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Project02.Tests" />
+      <option name="MAIN_CLASS_NAME" value="Project02.Tests.CarlWarriorStrategyTest" />
+      <option name="METHOD_NAME" value="TestWarriorEncounter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarlWarriorStrategyTest.TestWizardEncounter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Project02.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Project02.Tests" />
+      <option name="MAIN_CLASS_NAME" value="Project02.Tests.CarlWarriorStrategyTest" />
+      <option name="METHOD_NAME" value="TestWizardEncounter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarlWizardStrategyTest.TestMeWizardStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Project02.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Project02.Tests" />
+      <option name="MAIN_CLASS_NAME" value="Project02.Tests.CarlWizardStrategyTest" />
+      <option name="METHOD_NAME" value="TestMeWizardStrategy" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarlWizardStrategyTest.TestWarriorEncounter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Project02.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Project02.Tests" />
+      <option name="MAIN_CLASS_NAME" value="Project02.Tests.CarlWizardStrategyTest" />
+      <option name="METHOD_NAME" value="TestWarriorEncounter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarlWizardStrategyTest.TestWizardEncounter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Project02.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Project02.Tests" />
+      <option name="MAIN_CLASS_NAME" value="Project02.Tests.CarlWizardStrategyTest" />
+      <option name="METHOD_NAME" value="TestWizardEncounter" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CarlWizardStrategyTest.TestWarriorEncounter" />
+        <item itemvalue="JUnit.CarlWizardStrategyTest.TestWizardEncounter" />
+        <item itemvalue="JUnit.CarlWizardStrategyTest.TestMeWizardStrategy" />
+        <item itemvalue="JUnit.CarlWarriorStrategyTest.TestWarriorEncounter" />
+        <item itemvalue="JUnit.CarlWarriorStrategyTest.TestWizardEncounter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56a8f512-4ad4-4343-8e10-e1c38979b6f8" name="Changes" comment="" />
+      <created>1678200035306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678200035306</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CarlWarriorStrategy.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CarlWarriorStrategy.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/WarriorStrategy.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Nation_java$Main.ic" NAME="Main Coverage Results" MODIFIED="1680126004035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Project02.*</FILTER>
+    </SUITE>
+  </component>
+</project>

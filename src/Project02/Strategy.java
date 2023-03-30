@@ -1,5 +1,10 @@
 package Project02;
 
+/**
+ * Strategy interface
+ * This interface sets the default strategy method to be implemented by
+ * a specific strategy type.
+ */
 public interface Strategy {
     /**
      * Generic strategy for a game player

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class CarlWarriorStrategy implements Strategy{
     /**
-     * Warrior strategy is generally aggressive and returns maximum amount of life
+     * Warrior strategy is aggressive and returns maximum amount of life
      * points if players are from different nations in the range of 3632 to 3674.
      * If from the same nation then player will heal them to full life, 1208 for wizard
      * and 2331 for warrior.
