@@ -1,5 +1,6 @@
 package Project02;
 
+//
 public class AnnaWarrior extends People {
     public AnnaWarrior(String nation, String tribe, int lifePoints, Strategy AnnaWarriorStrategy)
     {
