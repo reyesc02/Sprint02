@@ -1,5 +1,3 @@
-package Project02.Tests;
-
 import Project02.*;
 import org.junit.jupiter.api.Test;
 import  static org.junit.jupiter.api.Assertions.*;
