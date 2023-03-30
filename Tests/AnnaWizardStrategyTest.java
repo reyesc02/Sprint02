@@ -1,4 +1,3 @@
-
 import Project02.*;
 import org.junit.jupiter.api.Test;
 import  static org.junit.jupiter.api.Assertions.*;
@@ -31,6 +30,7 @@ public class AnnaWizardStrategyTest {
         People otherWizard = new AnnaWizard("Minion", "4", 60, wizard);
 
         assertEquals(89,wizard.strategy(meWizard, otherWizard));
+        // 60 - 10 = 50 + 39 = 89 life points  
 
     }
 }
