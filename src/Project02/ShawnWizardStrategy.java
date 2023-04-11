@@ -17,18 +17,18 @@ public class ShawnWizardStrategy implements Strategy {
             if (otherPerson.getLifePoints() < me.getLifePoints())
             {
                 if (otherPerson.getType() == PeopleType.warrior)
-                { // run away
+                { // If there is an enemy warrior, run away from the encounter, lose a point of life.
                     lifePoints = -me.getLifePoints();
                 } else
-                { // attack a wizard
-                    lifePoints = -5; // do 5 damage
+                { // Wizard duel, use a fireball
+                    lifePoints = -10; // do 10 damage
                     me.modifyLifePoints(1);
                 }
             }
         } else
         {
             if (otherPerson.getLifePoints() < me.getLifePoints()) { // heal a friend
-                lifePoints = (int) (me.getLifePoints() - otherPerson.getLifePoints() / 2);
+                lifePoints = (int) (me.getLifePoints() - otherPerson.getLifePoints() + 5);
             } else
             {
                 lifePoints = 0;

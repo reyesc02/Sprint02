@@ -1,28 +1,37 @@
 package Project02;
 
 /**
- if my warrior's encounters another warrior from a different nation.
- Depend on the life point it has, less than 60 point will run away (-1)
- but of the other warrior less than 80 will attack(-10)
+ If encounter same tribes, nations,another warrior will take the other warrior life points and /2 add
+ that life-point to my life point
+ If it encounters a different tribes, nations, and peopleType will attack minimum if my life points is
+ less than the other life point I will have do max attack
  */
 public class AnnaWarriorStrategy implements Strategy {
-
-    public int strategy(People me, People otherPerson) {
-        int lifePoints = 0;
-        if (me.getNation() != otherPerson.getNation())
+    public int strategy(People me, People otherPerson)
+    {
+        if (me.getNation() == otherPerson.getNation() && me.getTribe() == otherPerson.getTribe())
         {
             if (me.getType() == PeopleType.warrior && otherPerson.getType() == PeopleType.warrior)
             {
-                if (me.getLifePoints() < 60)
+
+                if (me.getLifePoints() < otherPerson.getLifePoints())
                 {
-                    lifePoints = me.getLifePoints() - 1; // runaway
-                }
+                    int heal = otherPerson.getLifePoints() / 2 + me.getLifePoints();
+                    return heal;
+                } else
+                    return me.getLifePoints();
             }
-            if(otherPerson.getLifePoints() > 80)
+            else if(me.getNation() != otherPerson.getNation() && me.getTribe() != otherPerson.getTribe())
             {
-                lifePoints = otherPerson.getLifePoints() - 10; // attack
+                //other life is less than me so cause minimum damage because me life is greater here
+                if (otherPerson.getLifePoints() < me.getLifePoints())
+                {
+                    return otherPerson.getLifePoints() - 50;
+                    //causing maximum damage cos other life points greater than me
+                } else if (otherPerson.getLifePoints() > me.getLifePoints());
+
             }
         }
-        return lifePoints;
+        return otherPerson.getLifePoints()/2;
     }
 }

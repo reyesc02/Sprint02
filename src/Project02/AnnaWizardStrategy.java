@@ -1,31 +1,37 @@
 package Project02;
 
 /**
- *  
- * when my tribe has a greater life points than attack damage the otherTribe(-50)
- * but if my lifepoints is less than the otherTribe which I will have (-1) is taking.
- * If the tribe encounter same tribe it will help to heal (-10 and add)
-*/
-public class AnnaWizardStrategy implements Strategy{
-
-    public int strategy(People me, People otherPerson) {
-        int lifePoints = me.getLifePoints();
-        int giveLife;
-        if (me.getType() == PeopleType.wizard && otherPerson.getType() == PeopleType.wizard) {
-            if (otherPerson.getLifePoints() < me.getLifePoints()) // attack
+ If encounter same tribes, nations,another wizard will take the other Wizard life points and /2 add
+ that life-point to my life point
+ If it encounters a different tribes, nations, and peopleType will attack minimum if my life points is
+ less than the other life point I will have do max attack
+ */
+public class AnnaWizardStrategy implements Strategy {
+    public int strategy(People me, People otherPerson)
+    {
+        if (me.getNation() == otherPerson.getNation() && me.getTribe() == otherPerson.getTribe())
+        {
+            if (me.getType() == PeopleType.wizard && otherPerson.getType() == PeopleType.wizard)
             {
-                lifePoints = otherPerson.getLifePoints() - 50;
-            } else {
-                lifePoints = me.getLifePoints() - 1; // runaway
-            }
-            if (me.getLifePoints() < 40 && otherPerson.getLifePoints() <= 60)
-            {
-                giveLife = otherPerson.getLifePoints() - 10;
-                lifePoints = me.getLifePoints() + giveLife;
-            }
 
+                if (me.getLifePoints() < otherPerson.getLifePoints())
+                {
+                    int heal = otherPerson.getLifePoints() / 2 + me.getLifePoints();
+                    return heal;
+                } else
+                    return me.getLifePoints();
+            }
+            else if(me.getNation() != otherPerson.getNation() && me.getTribe() != otherPerson.getTribe())
+            {
+                //other life is less than me so cause minimum damage because me life is greater here
+                if (otherPerson.getLifePoints() < me.getLifePoints())
+                {
+                    return otherPerson.getLifePoints() - 50;
+                    //causing maximum damage cos other life points greater than me
+                } else if (otherPerson.getLifePoints() > me.getLifePoints());
+
+            }
         }
-        return lifePoints;
+        return otherPerson.getLifePoints()/2;
     }
-
 }

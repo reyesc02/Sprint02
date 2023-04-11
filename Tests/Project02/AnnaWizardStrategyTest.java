@@ -1,36 +1,32 @@
 import Project02.*;
-import org.junit.jupiter.api.Test;
-import  static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 public class AnnaWizardStrategyTest {
 
-    @Test
-    public void TestMeWizardStrategyAttack()
-    {
-        AnnaWizardStrategy wizard = new AnnaWizardStrategy();
-        People meWizard = new AnnaWizard("Idiot", "3", 90, wizard);
-        People otherWizard = new AnnaWizard("Minion", "3", 80, wizard);
+    @org.junit.Test
+    public void TestMeWizardHealStrategy() {
+        AnnaWarriorStrategy warrior = new AnnaWarriorStrategy();
+        People meWarrior = new AnnaWarrior("Idiot", "5", 60, warrior);
+        People otherWarrior = new AnnaWarrior("Idiot", "5", 70, warrior);
 
-        assertEquals(30, wizard.strategy(meWizard, otherWizard));
-
-    }
-    @Test
-    public void  testWizardStrategyWhenMePointsLessThanOtherPoints(){
-        AnnaWizardStrategy wizard = new AnnaWizardStrategy();
-        People meWizard = new AnnaWizard("Minion", "3", 80, wizard);
-        People otherWarrior = new AnnaWizard("Idiot", "3", 90, wizard);
-        assertEquals(79,wizard.strategy(meWizard,otherWarrior));
+        assertEquals(95, warrior.strategy(meWarrior, otherWarrior));
     }
 
+    @org.junit.Test
+    public void TestOtherWizardStrategy() {
+        AnnaWarriorStrategy warrior = new AnnaWarriorStrategy();
+        People meWarrior = new AnnaWarrior("Minion", "4", 80, warrior);
+        People otherWarrior = new AnnaWarrior("Minion", "4", 59, warrior);
+
+        assertEquals(80, warrior.strategy(meWarrior, otherWarrior));
+    }
+
     @Test
-    public void TestMeWizardStrategyHeal()
-    {
-        AnnaWizardStrategy wizard = new AnnaWizardStrategy();
-        People meWizard = new AnnaWizard("Idiots", "2", 39, wizard);
-        People otherWizard = new AnnaWizard("Minion", "4", 60, wizard);
+    public void TestOtherWizardStrategyAttack() {
+        AnnaWarriorStrategy warrior = new AnnaWarriorStrategy();
+        People meWarrior = new AnnaWarrior("Idiot", "2", 50, warrior);
+        People otherWarrior = new AnnaWarrior("Minion", "4", 60, warrior);
 
-        assertEquals(89,wizard.strategy(meWizard, otherWizard));
-        // 60 - 10 = 50 + 39 = 89 life points  
-
+        assertEquals(30, warrior.strategy(meWarrior, otherWarrior));
     }
 }

@@ -13,7 +13,7 @@ public class CarlWarriorStrategy implements Strategy{
     public int strategy(People me, People otherPerson) {
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) { // if in different nations
-            if (otherPerson.getLifePoints() > 40) // if above 20 life
+            if (otherPerson.getLifePoints() > 40) // if above 40 life
                 lifePoints = me.getLifePoints(); // attack
             else
                 lifePoints = -1; // run away
