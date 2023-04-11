@@ -34,25 +34,37 @@ public class Tribe
         tribeLifePoints = lifePoints;
         for(int i = 0; i < 5; i++)
             if(i % 2 == 0)
-                if (Objects.equals(nationName, "Diablos"))
+                switch (nationName) {
+                case "Diablos":
                     members.add(new CarlWarrior(nationName, tribeName, tribeLifePoints / 5, new CarlWarriorStrategy()));
-                else if (Objects.equals(nationName, "Source2"))
+                    break;
+                case "Source2":
                     members.add(new ShawnWarrior(nationName, tribeName, tribeLifePoints / 5, new ShawnWarriorStrategy()));
-                else if (Objects.equals(nationName, "Anna"))
+                    break;
+                case "Anna":
                     members.add(new AnnaWarrior(nationName, tribeName, tribeLifePoints / 5, new AnnaWarriorStrategy()));
-                else
+                    break;
+                default:
                     members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5, new WarriorStrategy()));
+                    break;
+                }
             else
-                if (Objects.equals(nationName, "Diablos"))
+                switch (nationName) {
+                case "Diablos":
                     members.add(new CarlWizard(nationName, tribeName, tribeLifePoints / 5, new CarlWizardStrategy()));
-                else if (Objects.equals(nationName, "Source2"))
+                    break;
+                case "Source2":
                     members.add(new ShawnWizard(nationName, tribeName, tribeLifePoints / 5, new ShawnWizardStrategy()));
-                else if (Objects.equals(nationName, "Anna"))
+                    break;
+                case "Anna":
                     members.add(new AnnaWizard(nationName, tribeName, tribeLifePoints / 5, new AnnaWizardStrategy()));
-                else
+                    break;
+                default:
                     members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5, new WizardStrategy()));
-        for(int i = 0; i < members.size(); i++)
-            livingMembers.addAll(members);
+                    break;
+                }
+            for(int i = 0; i < members.size(); i++)
+                livingMembers.addAll(members);
     }
     /**
      * Function for collecting all living tribe members

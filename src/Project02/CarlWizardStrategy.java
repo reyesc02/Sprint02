@@ -1,6 +1,5 @@
 package Project02;
 
-import java.util.Random;
 public class CarlWizardStrategy implements Strategy{
     /**
      * This strategy will always attack another nation.
@@ -10,20 +9,15 @@ public class CarlWizardStrategy implements Strategy{
      * @return - Life points used in the encounter
      */
     public int strategy(People me, People otherPerson) {
-
-        Random rand = new Random();
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) { // if not in same nation
-                    int max = 5963;
-                    int min = 3;
-                    lifePoints = (int) (1.35 * (float) ((rand.nextInt((max - min) + 1) + min)));
-                    //System.out.println("WizLP: " + lifePoints);
-        }
-        else {
-            if (otherPerson.getType() == PeopleType.wizard)
-                lifePoints = -(1208-me.getLifePoints()); // heal to full hp
+            if (me.getLifePoints() <= 60) // if enemy at or under 66 life
+                lifePoints = me.getLifePoints(); // attack
             else
-                lifePoints = -(2331-me.getLifePoints()); // heal to full hp
+                lifePoints = -1; // run away
+        } else {
+            if (otherPerson.getLifePoints() > 50 && me.getLifePoints() <= 50) // if in same team heal hp
+                lifePoints = -((me.getLifePoints() + otherPerson.getLifePoints())/2);
         }
         return lifePoints;
     }

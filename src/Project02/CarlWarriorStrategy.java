@@ -1,7 +1,5 @@
 package Project02;
 
-import java.util.Random;
-
 public class CarlWarriorStrategy implements Strategy{
     /**
      * Warrior strategy is aggressive and returns maximum amount of life
@@ -13,21 +11,16 @@ public class CarlWarriorStrategy implements Strategy{
      * @return - Life points to use in the encounter
      */
     public int strategy(People me, People otherPerson) {
-        Random rand = new Random();
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) { // if in different nations
-                int max = 40;
-                int min = 35;
-                lifePoints = (int) (8.35 * (float) ((rand.nextInt((max - min) + 1) + min) + 400));
-                //System.out.println("Warrior LP: " + lifePoints);
-        } else {
-            if (otherPerson.getType() == PeopleType.wizard)
-                lifePoints = -(1208-me.getLifePoints()); // heal to full hp
+            if (otherPerson.getLifePoints() > 40) // if above 20 life
+                lifePoints = me.getLifePoints(); // attack
             else
-                lifePoints = -(2331-me.getLifePoints()); // heal to full hp
+                lifePoints = -1; // run away
+        } else {
+            if (otherPerson.getLifePoints() > 50 && me.getLifePoints() <= 50) // if in same team heal hp
+                lifePoints = -((me.getLifePoints() + otherPerson.getLifePoints())/2);
         }
-
         return lifePoints;
     }
-
 }
