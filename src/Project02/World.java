@@ -187,9 +187,24 @@ public class World
         worldCreatedPeople.get(person1).modifyLifePoints((-p2damage));
         worldCreatedPeople.get(person2).modifyLifePoints((-p1damage ));
 
+        // HP Failsafe if over 100 hp reset to 100 hp.
+        if (worldCreatedPeople.get(person1).getLifePoints() > 100) {
+            //System.out.println("Person 1 above 100 hp! " + worldCreatedPeople.get(person1).myDescription + " " + worldCreatedPeople.get(person1).getLifePoints());
+            int newlp = worldCreatedPeople.get(person1).getLifePoints() - 100;
+            worldCreatedPeople.get(person1).modifyLifePoints((-newlp));
+            //System.out.println(worldCreatedPeople.get(person1).getLifePoints() + "\r");
+        }
+        else if (worldCreatedPeople.get(person2).getLifePoints() > 100) {
+            //System.out.println("Person 2 above 100 hp! " + worldCreatedPeople.get(person2).myDescription + " " + worldCreatedPeople.get(person2).getLifePoints());
+            int newlp = worldCreatedPeople.get(person2).getLifePoints() - 100;
+            worldCreatedPeople.get(person2).modifyLifePoints((-newlp));
+            //System.out.println(worldCreatedPeople.get(person2).getLifePoints() + "\r");
+        }
+
         // Both people lose 1 life point per encounter due to aging
         worldCreatedPeople.get(person1).modifyLifePoints((-1));
         worldCreatedPeople.get(person2).modifyLifePoints((-1));
+
 
     }
 
