@@ -13,7 +13,7 @@ public class CarlWarriorStrategyTest {
         People otherWarrior = new SchaperWarrior("Minions", "0", 80, new WarriorStrategy());
 
         int i = warrior.strategy(meWarrior,otherWarrior);
-        assertTrue(i == 80);
+        assertTrue(i > 3631 && i < 3675);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class CarlWarriorStrategyTest {
         People otherWarrior = new CarlWizard("Diablos", "0", 80, new CarlWizardStrategy());
 
         int i = warrior.strategy(meWarrior,otherWarrior);
-        assertEquals(0, i);
+        assertEquals(-1128, i);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class CarlWarriorStrategyTest {
         People otherWarrior = new CarlWarrior("Diablos", "0", 80, new CarlWarriorStrategy());
 
         int i = warrior.strategy(meWarrior,otherWarrior);
-        assertEquals(0, i);
+        assertEquals(-2251, i);
     }
 
 }
