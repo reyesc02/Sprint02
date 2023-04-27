@@ -17,9 +17,9 @@ public class World
     private ArrayList<Nation> allNations = new ArrayList<>();
     private ArrayList<Nation> allLivingNations = new ArrayList<>();
 
-//    private Random generator;
+    private Random generator;
 
-    private Die generator = new Die(6);
+//    private Die generator = new Die(6);
     private ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
     /**
@@ -162,11 +162,15 @@ public class World
         person1LifePointsToUse = worldCreatedPeople.get(person1).encounterLifePoints(worldCreatedPeople.get(person2), worldCreatedPeople.get(person1));
         person2LifePointsToUse = worldCreatedPeople.get(person2).encounterLifePoints(worldCreatedPeople.get(person1), worldCreatedPeople.get(person2));
 
-        // amount of life points actually used is subject to a psuedo-random encounter
-        Integer p1damage =  (int) (generator.nextFloat() * person1LifePointsToUse);
-        Integer p2damage =  (int) (generator.nextFloat() * person2LifePointsToUse);
+        Die die = new Die();
+        die.setDie(10);
+        int distance = die.roll();
 
-        int distance = generator.roll();
+        // amount of life points actually used is subject to a psuedo-random encounter
+        Integer p1damage =  (int) (generator.nextFloat() * person1LifePointsToUse) * distance;
+        Integer p2damage =  (int) (generator.nextFloat() * person2LifePointsToUse) * distance;
+
+//        int distance = generator.roll();
 
         if ((p1damage > 0) && (p2damage > 0))  // person 1  and person 2 are fighting and inflicting damage
         {
