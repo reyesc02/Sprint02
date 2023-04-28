@@ -32,63 +32,74 @@ public class Tribe
         nationName = nation;
         tribeName = tribe;
         tribeLifePoints = lifePoints;
-        for(int i = 0; i < 5; i++)
-            if(i % 2 == 0 && i < 4)
-                switch (nationName) {
+        if (tribe == "Tribe3") {
+            switch (nationName) {
                 case "Diablos":
-                    members.add(new CarlWarrior(nationName, tribeName, tribeLifePoints / 3, new CarlWarriorStrategy()));
+                    members.add(new CarlArtifact1(nationName, tribeName, tribeLifePoints / 3, new CarlArtifact1Strategy()));
+                    members.add(new CarlArtifact2(nationName, tribeName, tribeLifePoints / 3, new CarlArtifact2Strategy()));
                     break;
                 case "Source2":
-                    members.add(new ShawnWarrior(nationName, tribeName, tribeLifePoints / 3, new ShawnWarriorStrategy()));
+                    members.add(new ShawnArtifact1(nationName, tribeName, tribeLifePoints / 3, new ShawnArtifact1Strategy()));
+                    members.add(new ShawnArtifact2(nationName, tribeName, tribeLifePoints / 3, new ShawnArtifact2Strategy()));
                     break;
                 case "Anna":
-                    members.add(new AnnaWarrior(nationName, tribeName, tribeLifePoints / 3, new AnnaWarriorStrategy()));
+                    members.add(new AnnaArtifact1(nationName, tribeName, tribeLifePoints / 3, new AnnaArtifact1Strategy()));
+                    members.add(new AnnaArtifact2(nationName, tribeName, tribeLifePoints / 3, new AnnaArtifact2Strategy()));
                     break;
                 default:
-                    members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 3, new WarriorStrategy()));
                     break;
-                }
-            else if (i % 2 == 1 && i < 4)
-                switch (nationName) {
-                case "Diablos":
-                    members.add(new CarlWizard(nationName, tribeName, tribeLifePoints / 3, new CarlWizardStrategy()));
-                    break;
-                case "Source2":
-                    members.add(new ShawnWizard(nationName, tribeName, tribeLifePoints / 3, new ShawnWizardStrategy()));
-                    break;
-                case "Anna":
-                    members.add(new AnnaWizard(nationName, tribeName, tribeLifePoints / 3, new AnnaWizardStrategy()));
-                    break;
-                default:
-                    members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 3, new WizardStrategy()));
-                    break;
-                }
-            else if (i == 4)
-                switch (nationName) {
-                    case "Diablos":
-                        members.add(new CarlHealer(nationName, tribeName, tribeLifePoints / 3, new CarlHealerStrategy()));
-                        break;
-                    case "Source2":
-                        members.add(new ShawnHealer(nationName, tribeName, tribeLifePoints / 3, new ShawnHealerStrategy()));
-                        break;
-                    case "Anna":
-                        members.add(new AnnaHealer(nationName, tribeName, tribeLifePoints / 3, new AnnaHealerStrategy()));
-                        break;
-                    default:
-                        members.add(new CarlHealer(nationName, tribeName, tribeLifePoints / 3, new CarlHealerStrategy()));
-                        break;
-                }
-        members.add(new CarlArtifact1("Diablos", "Tribe5", 88, new CarlArtifact1Strategy()));
-        members.add(new CarlArtifact2("Diablos", "Tribe5", 88, new CarlArtifact2Strategy()));
+            }
+        } else {
+            for (int i = 0; i < 5; i++) {
+                if (i % 2 == 0 && i < 4)
+                    switch (nationName) {
+                        case "Diablos":
+                            members.add(new CarlWarrior(nationName, tribeName, tribeLifePoints / 3, new CarlWarriorStrategy()));
+                            break;
+                        case "Source2":
+                            members.add(new ShawnWarrior(nationName, tribeName, tribeLifePoints / 3, new ShawnWarriorStrategy()));
+                            break;
+                        case "Anna":
+                            members.add(new AnnaWarrior(nationName, tribeName, tribeLifePoints / 3, new AnnaWarriorStrategy()));
+                            break;
+                        default:
+                            members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 3, new WarriorStrategy()));
+                            break;
+                    }
+                else if (i % 2 == 1 && i < 4)
+                    switch (nationName) {
+                        case "Diablos":
+                            members.add(new CarlWizard(nationName, tribeName, tribeLifePoints / 3, new CarlWizardStrategy()));
+                            break;
+                        case "Source2":
+                            members.add(new ShawnWizard(nationName, tribeName, tribeLifePoints / 3, new ShawnWizardStrategy()));
+                            break;
+                        case "Anna":
+                            members.add(new AnnaWizard(nationName, tribeName, tribeLifePoints / 3, new AnnaWizardStrategy()));
+                            break;
+                        default:
+                            members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 3, new WizardStrategy()));
+                            break;
+                    }
+                else if (i == 4)
+                    switch (nationName) {
+                        case "Diablos":
+                            members.add(new CarlHealer(nationName, tribeName, tribeLifePoints / 3, new CarlHealerStrategy()));
+                            break;
+                        case "Source2":
+                            members.add(new ShawnHealer(nationName, tribeName, tribeLifePoints / 3, new ShawnHealerStrategy()));
+                            break;
+                        case "Anna":
+                            members.add(new AnnaHealer(nationName, tribeName, tribeLifePoints / 3, new AnnaHealerStrategy()));
+                            break;
+                        default:
+                            break;
+                    }
+        }
+            }
 
-        members.add(new ShawnArtifact1("Source2", "Tribe5", 88, new ShawnArtifact1Strategy()));
-        members.add(new ShawnArtifact2("Source2", "Tribe5", 88, new ShawnArtifact1Strategy()));
-
-        members.add(new AnnaArtifact1("Anna", "Tribe5", 88, new AnnaArtifact1Strategy()));
-        members.add(new AnnaArtifact2("Anna", "Tribe5", 88, new AnnaArtifact2Strategy()));
-
-            for(int i = 0; i < members.size(); i++)
-                livingMembers.addAll(members);
+        for(int i = 0; i < members.size(); i++)
+            livingMembers.addAll(members);
     }
     /**
      * Function for collecting all living tribe members

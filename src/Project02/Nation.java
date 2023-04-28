@@ -31,10 +31,23 @@ public class Nation
     {
         nationName = name;
         nationLifePoints = lifePoints;
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 3; i++)
         {
             this.tribes.add(new Tribe(nationName, "Tribe" + i, nationLifePoints / 3));
         }
+
+        switch (nationName) {
+            case "Diablos":
+                this.tribes.add(new Tribe("Diablos", "Tribe3", nationLifePoints / 3));
+                break;
+            case "Source2":
+                this.tribes.add(new Tribe("Source2", "Tribe3", nationLifePoints / 3));
+                break;
+            case "Anna":
+                this.tribes.add(new Tribe("Anna", "Tribe3", nationLifePoints / 3));
+                break;
+        }
+
         population.addAll(getNationPopulation());
         livingPopulation.addAll(population);
     }

@@ -15,7 +15,7 @@ public class AnnaArtifact2 extends People {
      */
     public AnnaArtifact2(String nation, String tribe, int lifePoints, Strategy artifactStrategy) {
         super(nation, tribe, PeopleType.artifact, lifePoints, artifactStrategy);
-        myDescription = "\tCarl Artifact 1";
+        myDescription = "\tAnna Artifact 2";
     }
 
     /**
