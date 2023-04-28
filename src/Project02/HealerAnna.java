@@ -1,4 +1,4 @@
 package Project02;
 
-public class Healer {
+public class HealerAnna {
 }

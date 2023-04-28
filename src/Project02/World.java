@@ -19,7 +19,7 @@ public class World
 
     private Random generator;
 
-//    private Die generator = new Die(6);
+    private Die myDie = new Die(6);
     private ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
     /**
@@ -84,11 +84,11 @@ public class World
      */
     public void createWorld()
     {
-        allNations.add(new Nation("Idiots", (worldLifePoints / 5)));
-        allNations.add(new Nation("Minions", (worldLifePoints) / 5));
-        allNations.add(new Nation("Diablos", (worldLifePoints / 5)));
-        allNations.add(new Nation("Source2", (worldLifePoints / 5)));
-        allNations.add(new Nation("Anna", (worldLifePoints / 5)));
+        //allNations.add(new Nation("Idiots", (worldLifePoints / 5)));
+        //allNations.add(new Nation("Minions", (worldLifePoints) / 5));
+        allNations.add(new Nation("Diablos", (worldLifePoints / 3)));
+        allNations.add(new Nation("Source2", (worldLifePoints / 3)));
+        allNations.add(new Nation("Anna", (worldLifePoints / 3)));
     }
 
 
@@ -162,28 +162,28 @@ public class World
         person1LifePointsToUse = worldCreatedPeople.get(person1).encounterLifePoints(worldCreatedPeople.get(person2), worldCreatedPeople.get(person1));
         person2LifePointsToUse = worldCreatedPeople.get(person2).encounterLifePoints(worldCreatedPeople.get(person1), worldCreatedPeople.get(person2));
 
-        Die die = new Die();
-        die.setDie(10);
-        int distance = die.roll();
+        myDie.setSides(10);
+
+        int distance = 10/myDie.roll();
 
         // amount of life points actually used is subject to a psuedo-random encounter
-        Integer p1damage =  (int) (generator.nextFloat() * person1LifePointsToUse) * distance;
-        Integer p2damage =  (int) (generator.nextFloat() * person2LifePointsToUse) * distance;
+        Integer p1damage =  (int) (myDie.roll()/10 * person1LifePointsToUse) * (distance);
+        Integer p2damage =  (int) (myDie.roll()/10 * person2LifePointsToUse) * (distance);
 
 //        int distance = generator.roll();
 
         if ((p1damage > 0) && (p2damage > 0))  // person 1  and person 2 are fighting and inflicting damage
         {
-            p2damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
-            p1damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
+            p2damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
+            p1damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
         }
         else if ((p1damage > 0) && (p2damage <= 0)) // person 1 is fighting and person 2 is running
         {
-            p2damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person1).getType().ordinal()+1)*(p1damage/3));
+            p2damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*(p1damage/3));
         }
         else if ((p1damage <= 0) && (p2damage > 0)) // person 2 is fighting and person 1 is running
         {
-            p1damage =  (int) (generator.nextFloat() * (worldCreatedPeople.get(person2).getType().ordinal()+1)*(p2damage/3));
+            p1damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*(p2damage/3));
         }
         else // freindly encounter, do nothing
         {

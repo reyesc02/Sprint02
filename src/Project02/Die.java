@@ -16,12 +16,8 @@ public class Die {
         return random.nextInt(sides) + 1;
     }
 
-    public int getDie() {
-        return die;
-    }
-
-    public void setDie(int die) {
-        this.die = die;
+    public void setSides(int sides) {
+        this.sides = sides;
     }
 
 }
