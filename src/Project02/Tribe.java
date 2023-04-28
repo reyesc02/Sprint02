@@ -32,7 +32,7 @@ public class Tribe
         nationName = nation;
         tribeName = tribe;
         tribeLifePoints = lifePoints;
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 5; i++)
             if(i % 2 == 0 && i < 4)
                 switch (nationName) {
                 case "Diablos":
@@ -78,8 +78,15 @@ public class Tribe
                         members.add(new CarlHealer(nationName, tribeName, tribeLifePoints / 3, new CarlHealerStrategy()));
                         break;
                 }
+        members.add(new CarlArtifact1("Diablos", "Tribe5", 88, new CarlArtifact1Strategy()));
+        members.add(new CarlArtifact2("Diablos", "Tribe5", 88, new CarlArtifact2Strategy()));
 
-            members.add(new CarlArtifact1("Diablos", "Tribe5", 88, CarlArtifact1Strategy));
+        members.add(new ShawnArtifact1("Source2", "Tribe5", 88, new ShawnArtifact1Strategy()));
+        members.add(new ShawnArtifact2("Source2", "Tribe5", 88, new ShawnArtifact1Strategy()));
+
+        members.add(new AnnaArtifact1("Anna", "Tribe5", 88, new AnnaArtifact1Strategy()));
+        members.add(new AnnaArtifact2("Anna", "Tribe5", 88, new AnnaArtifact2Strategy()));
+
             for(int i = 0; i < members.size(); i++)
                 livingMembers.addAll(members);
     }
