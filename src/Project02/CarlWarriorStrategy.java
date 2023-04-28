@@ -14,13 +14,11 @@ public class CarlWarriorStrategy implements Strategy{
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) { // if in different nations
             if (otherPerson.getLifePoints() > 40) // if above 40 life
-                lifePoints = me.getLifePoints(); // attack
+                lifePoints = 30; //me.getLifePoints(); // attack
             else
                 lifePoints = -1; // run away
-        } else {
-            if (otherPerson.getLifePoints() > 50 && me.getLifePoints() <= 50) // if in same team heal hp
-                lifePoints = -((me.getLifePoints() + otherPerson.getLifePoints())/2);
         }
+
         return lifePoints;
     }
 }

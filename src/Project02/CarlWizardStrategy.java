@@ -12,12 +12,9 @@ public class CarlWizardStrategy implements Strategy{
         int lifePoints = 0;
         if (me.getNation() != otherPerson.getNation()) { // if not in same nation
             if (me.getLifePoints() <= 60) // if enemy at or under 66 life
-                lifePoints = me.getLifePoints(); // attack
+                lifePoints = 25; //me.getLifePoints(); // attack
             else
                 lifePoints = -1; // run away
-        } else {
-            if (otherPerson.getLifePoints() > 50 && me.getLifePoints() <= 50) // if in same team heal hp
-                lifePoints = -((me.getLifePoints() + otherPerson.getLifePoints())/2);
         }
         return lifePoints;
     }

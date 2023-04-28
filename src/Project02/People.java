@@ -10,6 +10,7 @@ import Project02.PeopleType;
  */
 public abstract class People
 {
+    public int numEncounters = 0;
     private String personName;
     private String myNation;
     private String myTribe;
@@ -132,6 +133,16 @@ public abstract class People
     {
         String result = new String( myNation + "\t" +  myTribe + "\t" + me + "\t" + myDescription + "\t" + myLifePoints);
         return result;
+    }
+
+
+    public void addNumEncounters() {
+        this.numEncounters++;
+    }
+
+    public int getNumEncounters() {
+        numEncounters++;
+        return numEncounters;
     }
 }
 

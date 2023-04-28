@@ -174,18 +174,47 @@ public class World
         {
             p2damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
             p1damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
+
+            /*// add encounter if artifact
+            if (worldCreatedPeople.get(person1).getType() == PeopleType.artifact) {
+                worldCreatedPeople.get(person1).addNumEncounters();
+            }
+
+            // add encounter if artifact
+            if (worldCreatedPeople.get(person2).getType() == PeopleType.artifact) {
+                worldCreatedPeople.get(person2).addNumEncounters();
+            }*/
+
         }
         else if ((p1damage > 0) && (p2damage <= 0)) // person 1 is fighting and person 2 is running
         {
             p2damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*(p1damage/3));
+
+            /*// add encounter if artifact
+            if (worldCreatedPeople.get(person1).getType() == PeopleType.artifact) {
+                worldCreatedPeople.get(person1).addNumEncounters();
+            }*/
         }
         else if ((p1damage <= 0) && (p2damage > 0)) // person 2 is fighting and person 1 is running
         {
             p1damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*(p2damage/3));
+
+            /*// add encounter if artifact
+            if (worldCreatedPeople.get(person2).getType() == PeopleType.artifact) {
+                worldCreatedPeople.get(person2).addNumEncounters();
+            }*/
         }
         else // freindly encounter, do nothing
         {
+            /*// add encounter if artifact
+            if (worldCreatedPeople.get(person1).getType() == PeopleType.artifact && worldCreatedPeople.get(person2).getType() != PeopleType.artifact) {
+                worldCreatedPeople.get(person1).addNumEncounters();
+            }
 
+            // add encounter if artifact
+            if (worldCreatedPeople.get(person2).getType() == PeopleType.artifact && worldCreatedPeople.get(person1).getType() != PeopleType.artifact) {
+                worldCreatedPeople.get(person2).addNumEncounters();
+            }*/
         }
 
         // record the damage: positive damage should be subtracted for persons lifePoint
@@ -210,6 +239,18 @@ public class World
         // Both people lose 1 life point per encounter due to aging
         worldCreatedPeople.get(person1).modifyLifePoints((-1));
         worldCreatedPeople.get(person2).modifyLifePoints((-1));
+
+        // Destroy artifact if 2 encounters played
+        if (worldCreatedPeople.get(person1).getType() == PeopleType.artifact && worldCreatedPeople.get(person1).getNumEncounters() >= 2) {
+            System.out.println("Artifact destroyed after 2 encounters!");
+            worldCreatedPeople.get(person1).modifyLifePoints((-100));
+        }
+
+        // Destroy artifact if 2 encounters played
+        if (worldCreatedPeople.get(person2).getType() == PeopleType.artifact && worldCreatedPeople.get(person2).getNumEncounters() >= 2) {
+            System.out.println("Artifact destroyed after 2 encounters!");
+            worldCreatedPeople.get(person2).modifyLifePoints((-100));
+        }
 
 
     }

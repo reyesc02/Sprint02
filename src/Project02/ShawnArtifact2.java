@@ -15,7 +15,7 @@ public class ShawnArtifact2 extends People {
      */
     public ShawnArtifact2(String nation, String tribe, int lifePoints, Strategy artifactStrategy) {
         super(nation, tribe, PeopleType.artifact, lifePoints, artifactStrategy);
-        myDescription = "\tShawn Artifact 2";
+        myDescription = "\tShawn Artifact 2 - Kevlar Vest";
     }
 
     /**
