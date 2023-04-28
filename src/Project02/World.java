@@ -170,8 +170,6 @@ public class World
         Integer p1damage =  (int) (myDie.roll()/10 * person1LifePointsToUse) * (distance);
         Integer p2damage =  (int) (myDie.roll()/10 * person2LifePointsToUse) * (distance);
 
-//        int distance = generator.roll();
-
         if ((p1damage > 0) && (p2damage > 0))  // person 1  and person 2 are fighting and inflicting damage
         {
             p2damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);

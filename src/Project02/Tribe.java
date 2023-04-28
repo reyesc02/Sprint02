@@ -33,35 +33,50 @@ public class Tribe
         tribeName = tribe;
         tribeLifePoints = lifePoints;
         for(int i = 0; i < 5; i++)
-            if(i % 2 == 0)
+            if(i % 2 == 0 && i != 5)
                 switch (nationName) {
                 case "Diablos":
-                    members.add(new CarlWarrior(nationName, tribeName, tribeLifePoints / 5, new CarlWarriorStrategy()));
+                    members.add(new CarlWarrior(nationName, tribeName, tribeLifePoints / 3, new CarlWarriorStrategy()));
                     break;
                 case "Source2":
-                    members.add(new ShawnWarrior(nationName, tribeName, tribeLifePoints / 5, new ShawnWarriorStrategy()));
+                    members.add(new ShawnWarrior(nationName, tribeName, tribeLifePoints / 3, new ShawnWarriorStrategy()));
                     break;
                 case "Anna":
-                    members.add(new AnnaWarrior(nationName, tribeName, tribeLifePoints / 5, new AnnaWarriorStrategy()));
+                    members.add(new AnnaWarrior(nationName, tribeName, tribeLifePoints / 3, new AnnaWarriorStrategy()));
                     break;
                 default:
-                    members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5, new WarriorStrategy()));
+                    members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 3, new WarriorStrategy()));
+                    break;
+                }
+            else if (i != 5)
+                switch (nationName) {
+                case "Diablos":
+                    members.add(new CarlWizard(nationName, tribeName, tribeLifePoints / 3, new CarlWizardStrategy()));
+                    break;
+                case "Source2":
+                    members.add(new ShawnWizard(nationName, tribeName, tribeLifePoints / 3, new ShawnWizardStrategy()));
+                    break;
+                case "Anna":
+                    members.add(new AnnaWizard(nationName, tribeName, tribeLifePoints / 3, new AnnaWizardStrategy()));
+                    break;
+                default:
+                    members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 3, new WizardStrategy()));
                     break;
                 }
             else
                 switch (nationName) {
-                case "Diablos":
-                    members.add(new CarlWizard(nationName, tribeName, tribeLifePoints / 5, new CarlWizardStrategy()));
-                    break;
-                case "Source2":
-                    members.add(new ShawnWizard(nationName, tribeName, tribeLifePoints / 5, new ShawnWizardStrategy()));
-                    break;
-                case "Anna":
-                    members.add(new AnnaWizard(nationName, tribeName, tribeLifePoints / 5, new AnnaWizardStrategy()));
-                    break;
-                default:
-                    members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5, new WizardStrategy()));
-                    break;
+                    case "Diablos":
+                        members.add(new CarlHealer(nationName, tribeName, tribeLifePoints / 3, new CarlHealerStrategy()));
+                        break;
+                    case "Source2":
+                        members.add(new ShawnHealer(nationName, tribeName, tribeLifePoints / 3, new ShawnHealerStrategy()));
+                        break;
+                    case "Anna":
+                        members.add(new AnnaHealer(nationName, tribeName, tribeLifePoints / 3, new AnnaHealerStrategy()));
+                        break;
+                    default:
+                        members.add(new CarlHealer(nationName, tribeName, tribeLifePoints / 3, new CarlHealerStrategy()));
+                        break;
                 }
             for(int i = 0; i < members.size(); i++)
                 livingMembers.addAll(members);
