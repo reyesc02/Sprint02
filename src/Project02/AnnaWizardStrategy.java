@@ -9,19 +9,7 @@ package Project02;
 public class AnnaWizardStrategy implements Strategy {
     public int strategy(People me, People otherPerson)
     {
-        if (me.getNation() == otherPerson.getNation() && me.getTribe() == otherPerson.getTribe())
-        {
-            if (me.getType() == PeopleType.wizard && otherPerson.getType() == PeopleType.wizard)
-            {
-
-                if (me.getLifePoints() < otherPerson.getLifePoints())
-                {
-                    int heal = otherPerson.getLifePoints() / 2 + me.getLifePoints();
-                    return heal;
-                } else
-                    return me.getLifePoints();
-            }
-            else if(me.getNation() != otherPerson.getNation() && me.getTribe() != otherPerson.getTribe())
+            if(me.getNation() != otherPerson.getNation() && me.getTribe() != otherPerson.getTribe())
             {
                 //other life is less than me so cause minimum damage because me life is greater here
                 if (otherPerson.getLifePoints() < me.getLifePoints())
@@ -31,7 +19,7 @@ public class AnnaWizardStrategy implements Strategy {
                 } else if (otherPerson.getLifePoints() > me.getLifePoints());
 
             }
-        }
+
         return otherPerson.getLifePoints()/2;
     }
 }

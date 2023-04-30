@@ -7,6 +7,7 @@ public class AnnaArtifact2Strategy implements Strategy {
         if (me.getNation() == otherPerson.getNation()) { //if in same nation
             artifactHealing = -75; // heal 75 pts
             otherPerson.addNumEncounters();
+            System.out.println("Magic Shield Encounters: " + otherPerson.getNumEncounters());
         } else {
             artifactHealing = -1; // run away
         }

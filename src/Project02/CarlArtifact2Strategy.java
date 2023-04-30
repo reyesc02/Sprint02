@@ -10,6 +10,7 @@ public class CarlArtifact2Strategy implements Strategy {
             else
                 artifactHealing = -50; // else heal 50
             otherPerson.addNumEncounters();
+            System.out.println("Potion Encounters: " + otherPerson.getNumEncounters());
         } else {
             artifactHealing = -1; // run away
         }

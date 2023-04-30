@@ -7,6 +7,7 @@ public class AnnaArtifact1Strategy implements Strategy {
             if (me.getNation() != otherPerson.getNation()) { //if not in same nation
                 artifactDamage = 75;
                 otherPerson.addNumEncounters(); // add encounter to artifact
+                System.out.println("Magic Sword Encounters: " + otherPerson.getNumEncounters());
             }
             return artifactDamage;
         }

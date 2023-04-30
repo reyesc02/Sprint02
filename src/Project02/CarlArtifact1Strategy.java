@@ -7,6 +7,7 @@ public class CarlArtifact1Strategy implements Strategy {
         if (me.getNation() != otherPerson.getNation()) { //if not in same nation
             artifactDamage = 60;
             otherPerson.addNumEncounters(); // add encounter to artifact
+            System.out.println("Zweihander Encounters: " + otherPerson.getNumEncounters());
         }
         return artifactDamage;
     }
