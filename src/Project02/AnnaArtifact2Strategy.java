@@ -3,14 +3,25 @@ package Project02;
 public class AnnaArtifact2Strategy implements Strategy {
     @Override
     public int strategy(People me, People otherPerson) {
-        int artifactHealing;
-        if (me.getNation() == otherPerson.getNation()) { //if in same nation
-            artifactHealing = -75; // heal 75 pts
-            otherPerson.addNumEncounters();
-            System.out.println("Magic Shield Encounters: " + otherPerson.getNumEncounters());
-        } else {
-            artifactHealing = -1; // run away
+        int magicSpell;
+        if (me.getNation() != otherPerson.getNation() && me.getTribe() != otherPerson.getTribe()) { //if in same nation
+            magicSpell = - 80;// damage
+            otherPerson.getNumEncounters();
+            System.out.println("Magic Spell: " + otherPerson.getNumEncounters());
+
+            int medicinePill = 0;
+            if (me.getNation() == otherPerson.getNation())
+            {
+                medicinePill = me.getLifePoints() + 50;
+                otherPerson.addNumEncounters();
+                System.out.println("Medicine Potion: " + otherPerson.getNumEncounters());
+                return medicinePill;
+            }
         }
-        return artifactHealing;
+        else
+        {
+            magicSpell = -1; // run away
+        }
+        return magicSpell;
     }
 }

@@ -6,12 +6,12 @@ package Project02;
  */
 public class AnnaArtifact2 extends People {
     /**
-     * The CarlWarrior constructor.
-     * This sets up the CarlWarrior type.
+     * The AnnaWarrior constructor.
+     * This sets up the AnnaWarrior type.
      * @param nation the nation of the person
      * @param tribe the tribe of the person
      * @param lifePoints the lifePoints of the person
-     * @param warriorStrategy, the Strategy
+     * @param artifactStrategy, the Strategy
      */
     public AnnaArtifact2(String nation, String tribe, int lifePoints, Strategy artifactStrategy) {
         super(nation, tribe, PeopleType.artifact, lifePoints, artifactStrategy);
