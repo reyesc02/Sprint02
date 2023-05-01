@@ -1,8 +1,8 @@
 package Project02;
 
 /**
- * The CarlWarrior class.
- * This class sets up the CarlWarrier type.
+ * The ShawnArtifact1 class.
+ * This class sets up the ShawnArtifact1 type.
  */
 public class ShawnArtifact1 extends People {
     /**
@@ -11,11 +11,11 @@ public class ShawnArtifact1 extends People {
      * @param nation the nation of the person
      * @param tribe the tribe of the person
      * @param lifePoints the lifePoints of the person
-     * @param warriorStrategy, the Strategy
+     * @param artifactStrategy, the Strategy of the artifact
      */
     public ShawnArtifact1(String nation, String tribe, int lifePoints, Strategy artifactStrategy) {
         super(nation, tribe, PeopleType.artifact, lifePoints, artifactStrategy);
-        myDescription = "\tShawn Artifact 1 - Grenade";
+        myDescription = "\tShawn Artifact 1 - Thunder Gun";
     }
 
     /**
