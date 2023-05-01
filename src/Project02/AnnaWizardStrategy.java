@@ -14,12 +14,14 @@ public class AnnaWizardStrategy implements Strategy {
                 //other life is less than me so cause minimum damage because me life is greater here
                 if (otherPerson.getLifePoints() < me.getLifePoints())
                 {
-                    return otherPerson.getLifePoints() - 50;
+                    int mini_damage = (int) (Math.random() * 60) + 50; // between 50 and 60 random
+                    return otherPerson.getLifePoints() - mini_damage;
                     //causing maximum damage cos other life points greater than me
                 } else if (otherPerson.getLifePoints() > me.getLifePoints());
 
-                    return otherPerson.getLifePoints() / 5;
+                    int max_damage = otherPerson.getLifePoints() /2;
+                    return max_damage;
             }
-        return otherPerson.getLifePoints() / 5;
+        return otherPerson.getLifePoints() / 2;
     }
 }
