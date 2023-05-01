@@ -20,7 +20,7 @@ public class AnnaArtifact2 extends People {
 
     /**
      * The encounterLifePoints function
-     * This function runs the encounter Strategy of the CarlWarrior
+     * This function runs the encounter Strategy of the AnnaWarrior
      * @param me the 1st person
      * @param otherPerson the 2nd person in the encounter.
      * @return the outcome of the encounter.
