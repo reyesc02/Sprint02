@@ -18,8 +18,8 @@ public class AnnaWizardStrategy implements Strategy {
                     //causing maximum damage cos other life points greater than me
                 } else if (otherPerson.getLifePoints() > me.getLifePoints());
 
+                    return otherPerson.getLifePoints() / 5;
             }
-
-        return otherPerson.getLifePoints()/2;
+        return otherPerson.getLifePoints() / 5;
     }
 }
