@@ -13,7 +13,7 @@ import java.util.*;
 public class World
 {
     private final int worldLifePoints = 4000;
-    private final int numberOfRounds = 100;
+    private final int numberOfRounds = 50;
     private ArrayList<Nation> allNations = new ArrayList<>();
     private ArrayList<Nation> allLivingNations = new ArrayList<>();
 
@@ -86,9 +86,9 @@ public class World
     {
         //allNations.add(new Nation("Idiots", (worldLifePoints / 5)));
         //allNations.add(new Nation("Minions", (worldLifePoints) / 5));
-        allNations.add(new Nation("Diablos", (worldLifePoints / 5)));
-        allNations.add(new Nation("Source2", (worldLifePoints / 5)));
-        allNations.add(new Nation("Anna", (worldLifePoints / 5)));
+        allNations.add(new Nation("Diablos", (worldLifePoints / 4)));
+        allNations.add(new Nation("Source2", (worldLifePoints / 4)));
+        allNations.add(new Nation("Anna", (worldLifePoints / 4)));
     }
 
 
@@ -164,16 +164,16 @@ public class World
 
         myDie.setSides(10);
 
-        int distance = 10/myDie.roll();
+        int distance = myDie.roll();
 
         // amount of life points actually used is subject to a psuedo-random encounter
-        Integer p1damage =  (int) (myDie.roll()/10 * person1LifePointsToUse) * (distance);
-        Integer p2damage =  (int) (myDie.roll()/10 * person2LifePointsToUse) * (distance);
+        Integer p1damage =  (int) (myDie.roll()/6 * person1LifePointsToUse) * (distance);
+        Integer p2damage =  (int) (myDie.roll()/6 * person2LifePointsToUse) * (distance);
 
         if ((p1damage > 0) && (p2damage > 0))  // person 1  and person 2 are fighting and inflicting damage
         {
-            p2damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
-            p1damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
+            p2damage =  (int) (myDie.roll()/6 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*p1damage);
+            p1damage =  (int) (myDie.roll()/6 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*p2damage);
 
             /*// add encounter if artifact
             if (worldCreatedPeople.get(person1).getType() == PeopleType.artifact) {
@@ -188,7 +188,7 @@ public class World
         }
         else if ((p1damage > 0) && (p2damage <= 0)) // person 1 is fighting and person 2 is running
         {
-            p2damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*(p1damage/3));
+            p2damage =  (int) (myDie.roll()/6 * (worldCreatedPeople.get(person1).getType().ordinal()+1)*(p1damage/3));
 
             /*// add encounter if artifact
             if (worldCreatedPeople.get(person1).getType() == PeopleType.artifact) {
@@ -197,7 +197,7 @@ public class World
         }
         else if ((p1damage <= 0) && (p2damage > 0)) // person 2 is fighting and person 1 is running
         {
-            p1damage =  (int) (myDie.roll()/10 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*(p2damage/3));
+            p1damage =  (int) (myDie.roll()/6 * (worldCreatedPeople.get(person2).getType().ordinal()+1)*(p2damage/3));
 
             /*// add encounter if artifact
             if (worldCreatedPeople.get(person2).getType() == PeopleType.artifact) {
