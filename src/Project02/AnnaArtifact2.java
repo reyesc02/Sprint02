@@ -1,13 +1,13 @@
 package Project02;
 
 /**
- * The CarlWarrior class.
- * This class sets up the CarlWarrier type.
+ * The AnnaArtifact2 class.
+ * This class sets up the AnnaArtifact2 type.
  */
 public class AnnaArtifact2 extends People {
     /**
-     * The AnnaWarrior constructor.
-     * This sets up the AnnaWarrior type.
+     * The AnnaArtifact2 constructor.
+     * This sets up the AnnaArtifact2 type.
      * @param nation the nation of the person
      * @param tribe the tribe of the person
      * @param lifePoints the lifePoints of the person
@@ -20,7 +20,7 @@ public class AnnaArtifact2 extends People {
 
     /**
      * The encounterLifePoints function
-     * This function runs the encounter Strategy of the AnnaWarrior
+     * This function runs the encounter Strategy of the AnnaArtifact2
      * @param me the 1st person
      * @param otherPerson the 2nd person in the encounter.
      * @return the outcome of the encounter.
